@@ -1,0 +1,2 @@
+class MatriculasTable < ApplicationRecord
+end

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  cpf: MyString
+  data_nasc: 2021-12-17
+  cell: 1
+  genero: MyString
+  meio_pag: MyString
+
+two:
+  nome: MyString
+  cpf: MyString
+  data_nasc: 2021-12-17
+  cell: 1
+  genero: MyString
+  meio_pag: MyString

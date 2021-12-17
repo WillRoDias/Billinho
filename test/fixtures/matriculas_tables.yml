@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  v_total: 1.5
+  qtd_faturas: 1
+  vencimento: 1
+  nome_curso: MyString
+  id_ies: 1
+  id_aluno: 1
+
+two:
+  v_total: 1.5
+  qtd_faturas: 1
+  vencimento: 1
+  nome_curso: MyString
+  id_ies: 1
+  id_aluno: 1
