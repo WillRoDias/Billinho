@@ -10,6 +10,6 @@ class IesTable < ApplicationRecord
     def type_var?
         type == "Universidade"
         type == "Escola"
-        Type == "Creche"
+        type == "Creche"
     end
 end
