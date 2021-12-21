@@ -27,12 +27,14 @@ ActiveRecord::Schema.define(version: 2021_12_17_140623) do
   end
 
   create_table "faturas_tables", force: :cascade do |t|
+    t.bigint "matriculas_tables_id"
     t.float "valor_faturas"
     t.date "data_vencimento"
     t.integer "id_matricula"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["matriculas_tables_id"], name: "index_faturas_tables_on_matriculas_tables_id"
   end
 
   create_table "ies", force: :cascade do |t|
@@ -52,14 +54,16 @@ ActiveRecord::Schema.define(version: 2021_12_17_140623) do
   end
 
   create_table "matriculas_tables", force: :cascade do |t|
+    t.bigint "aluno_tables_id"
+    t.bigint "ies_tables_id"
     t.float "v_total"
     t.integer "qtd_faturas"
     t.integer "vencimento"
     t.string "nome_curso"
-    t.integer "id_ies"
-    t.integer "id_aluno"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["aluno_tables_id"], name: "index_matriculas_tables_on_aluno_tables_id"
+    t.index ["ies_tables_id"], name: "index_matriculas_tables_on_ies_tables_id"
   end
 
 end
