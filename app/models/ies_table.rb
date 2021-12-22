@@ -22,7 +22,8 @@ class IesTable < ApplicationRecord
         # #certifica que o elemento contenha apenas caracteres numércos
         # validates :cnpj, numericality: true 
 
-    #Tipo da IES    
+    #Tipo da IES   
+    #Certifica que o tipo da Instituição não seja nulo, não seja case sensitive e que satisfaça valores predefinidos "Universidade, Escola ou Creche"
     validates :tipo, presence: true {message: "ERRO: Tipo da instituição não informado.",
                case_sensitive: false},
                     inclusion: { in: %w(Universidade Escola Creche),
