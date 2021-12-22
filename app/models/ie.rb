@@ -1,2 +1,2 @@
-class Ie < ApplicationRecord
-end
+ class Ie < ApplicationRecord
+ end

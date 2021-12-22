@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(version: 2021_12_17_140623) do
     t.index ["matriculas_tables_id"], name: "index_faturas_tables_on_matriculas_tables_id"
   end
 
-  create_table "ies", force: :cascade do |t|
-    t.string "nome"
-    t.string "cnpj"
-    t.string "tipo"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+   create_table "ies", force: :cascade do |t|
+     t.string "nome"
+     t.string "cnpj"
+     t.string "tipo"
+     t.datetime "created_at", precision: 6, null: false
+     t.datetime "updated_at", precision: 6, null: false
+   end
 
   create_table "ies_tables", force: :cascade do |t|
     t.string "nome"
