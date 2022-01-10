@@ -6,8 +6,7 @@ class AlunoTable < ApplicationRecord
 
     #Nome do Aluno
     #Certifica que o nome do aluno foi informado e que o nome do aluno seja unico.
-    validates :nome, presence: true {message: "ERRO: Nome do aluno não informado.", case_sensitive: false},
-                   uniquiness: true {message: "ERRO: aluno já cadastrado."}
+    validates :nome, presence: true, confirmation: {case_sensitive: false, uniquiness: true} 
         #============ Não utilizado, substituído pela validação acima ============
         # #Certifica que o elemento não seja vazio
         # validates :nome, presence: true 
@@ -15,9 +14,7 @@ class AlunoTable < ApplicationRecord
         # validates :nome, uniquiness: true 
     
     #CPF do Aluno
-    validaes :cpf, presence: true {message: "ERRO: CPF do aluno não informado."},
-                 uniquiness: true {message: "ERRO: CPF já cadastrado."},
-               numericality: true {message: "ERRO: Este campo deve conter apenas algarismos numéricos."}
+    validates :cpf, presence: true, confirmation: {uniquiness: true}, numericality: true
         #============ Não utilizado, substituído pela validação acima ============
         # #Certifica que o elemento não seja vazio
         # validaes :cpf, presence: true 
@@ -28,16 +25,14 @@ class AlunoTable < ApplicationRecord
     
     #Gênero do Aluno
     #Certifica que o gênero do aluno não seja nulo e que satisfaça os valores predeterminado "F ou M"
-    validates :genero, presence: true {message: "ERRO: Gênero do aluno não informado."}, case_sensitive: false, 
-                      inclusion: {in:   %w(M F), message: "ERRO: %{value} não é válido, certifique-se que seja F ou M"}
+    validates :genero, presence: true, confirmation: {case_sensitive: false}, inclusion: {in:   %w(M F)}
         #============ Não utilizado, substituído pela validação acima ============        
         # #Certifica que o elemento não seja vazio se satisfazer tipos predefinidos
         # validates :genero, presence: true, if: :gender?  
 
     #Meio de pagamento do Aluno
     #Certifica que o elemento não seja vazio se satisfazer tipos predefinidos
-    validates :meio_pag, presence: true,
-                        inclusion: {in: %w(Boleto Cartao), message: "ERRO: Meio de pagamento inválido, certifique-se que seja BOLETO ou CARTÃO."} 
+    validates :meio_pag, presence: true, inclusion: {in: %w(Boleto Cartao)}
 
     #==+ Não utilizado ===========================================================
         # #Métodoo valida se o tipo satisfazer um dos tipos predefinidos

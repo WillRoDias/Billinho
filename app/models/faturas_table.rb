@@ -4,16 +4,15 @@ class FaturasTable < ApplicationRecord
 
     #Valor das faturas
     #Certifica que o atributo não é vazio
-    validates :valor_faturas, presence: true {message: "ERRO: Valor das faturas inexistente."}
+    validates :valor_faturas, presence: true
     
     #Data de validade das faturas
     #Certifica que o atributo não é vazio
-    validates :data_vencimento, presence: true {message: "ERRO: Data de vencimento inexistente."}
+    validates :data_vencimento, presence: true
     
     #Status de pagamento das faturas
     #Certifica que o atributo não é vazio se satisfazer o método "type_status"
-    validates :status, presence: true {message: "ERRO: Data de validade inexistente."},
-                      inclusion: {in: %w(Aberta Atrasada Paga), message: "ERRO: %{value} não é um status válido"}
+    validates :status, presence: true, inclusion: {in: %w(Aberta Atrasada Paga)}
 
         #==+ Não utilizado ===================================================
         # def type_status?
